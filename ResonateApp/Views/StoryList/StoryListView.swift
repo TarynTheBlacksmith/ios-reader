@@ -37,74 +37,66 @@ struct StoryListView: View {
 
     private var storyGrid: some View {
         ScrollView {
-            LazyVGrid(columns: [
-                GridItem(.adaptive(minimum: 300, maximum: 400), spacing: 20)
-            ], spacing: 20) {
+            LazyVGrid(columns: Layout.gridColumns, spacing: Layout.gridSpacing) {
                 ForEach(viewModel.stories) { story in
-                    StoryCard(story: story)
-                        .onTapGesture {
+                    StoryCard(
+                        story: story,
+                        onEdit: {
                             isPresentingStory = false
                             selectedStory = story
+                        },
+                        onPresent: {
+                            isPresentingStory = true
+                            selectedStory = story
                         }
-                        .contextMenu {
-                            Button {
-                                isPresentingStory = true
-                                selectedStory = story
-                            } label: {
-                                Label("Present", systemImage: "play.fill")
-                            }
-
-                            Button {
-                                isPresentingStory = false
-                                selectedStory = story
-                            } label: {
-                                Label("Edit", systemImage: "pencil")
-                            }
-
-                            Divider()
-
-                            Button {
-                                viewModel.duplicateStory(story)
-                            } label: {
-                                Label("Duplicate", systemImage: "doc.on.doc")
-                            }
-
-                            Button(role: .destructive) {
-                                viewModel.deleteStory(story)
-                            } label: {
-                                Label("Delete", systemImage: "trash")
-                            }
+                    )
+                    .contextMenu {
+                        Button {
+                            viewModel.duplicateStory(story)
+                        } label: {
+                            Label("Duplicate", systemImage: "doc.on.doc")
                         }
+
+                        Button(role: .destructive) {
+                            viewModel.deleteStory(story)
+                        } label: {
+                            Label("Delete", systemImage: "trash")
+                        }
+                    }
                 }
             }
-            .padding()
+            .padding(Spacing.screenPadding)
         }
     }
 
     private var emptyState: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: Spacing.large) {
             Image(systemName: "book.pages")
-                .font(.system(size: 60))
-                .foregroundStyle(.secondary)
+                .font(.system(size: 72))
+                .foregroundStyle(AppColors.textSecondary)
+                .padding(.top, Spacing.xxxLarge)
 
-            Text("No Stories Yet")
-                .font(.title2)
-                .fontWeight(.semibold)
+            VStack(spacing: Spacing.small) {
+                Text("No Stories Yet")
+                    .font(AppFonts.title)
+                    .foregroundStyle(AppColors.textPrimary)
 
-            Text("Create your first multimedia story\nfollowing Resonate principles")
-                .multilineTextAlignment(.center)
-                .foregroundStyle(.secondary)
+                Text("Create your first multimedia story\nfollowing Resonate principles")
+                    .font(AppFonts.body)
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(AppColors.textSecondary)
+            }
 
             Button {
                 showingCreateSheet = true
             } label: {
                 Label("Create Story", systemImage: "plus")
-                    .font(.headline)
+                    .font(AppFonts.bodyEmphasis)
             }
-            .buttonStyle(.borderedProminent)
-            .controlSize(.large)
+            .primaryButtonStyle()
+            .padding(.top, Spacing.small)
         }
-        .padding()
+        .padding(Spacing.screenPadding)
     }
 }
 

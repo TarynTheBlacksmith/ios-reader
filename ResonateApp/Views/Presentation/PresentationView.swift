@@ -12,6 +12,7 @@ struct PresentationView: View {
     @Binding var isPresenting: Bool
     @State private var showingControls = true
     @State private var autoHideTask: Task<Void, Never>?
+    @State private var dragOffset: CGFloat = 0
 
     init(story: Story, isPresenting: Binding<Bool>) {
         _viewModel = StateObject(wrappedValue: PresentationViewModel(story: story))
@@ -30,6 +31,7 @@ struct PresentationView: View {
                 )
                 .transition(transitionForSlide(slide))
                 .id(slide.id)
+                .offset(x: dragOffset)
             }
 
             // Controls overlay
@@ -45,6 +47,36 @@ struct PresentationView: View {
         }
         .statusBar(hidden: !showingControls)
         .persistentSystemOverlays(showingControls ? .automatic : .hidden)
+        .gesture(
+            DragGesture(minimumDistance: 30)
+                .onChanged { value in
+                    // Only allow horizontal drag
+                    if abs(value.translation.width) > abs(value.translation.height) {
+                        dragOffset = value.translation.width
+                    }
+                }
+                .onEnded { value in
+                    let threshold: CGFloat = 100
+                    let velocity = value.predictedEndTranslation.width - value.translation.width
+
+                    withAnimation(AppAnimations.standard) {
+                        if value.translation.width < -threshold || velocity < -100 {
+                            // Swipe left - next slide
+                            if viewModel.canAdvance {
+                                viewModel.nextSlide()
+                                showControlsBriefly()
+                            }
+                        } else if value.translation.width > threshold || velocity > 100 {
+                            // Swipe right - previous slide
+                            if viewModel.canGoBack {
+                                viewModel.previousSlide()
+                                showControlsBriefly()
+                            }
+                        }
+                        dragOffset = 0
+                    }
+                }
+        )
         .onTapGesture {
             withAnimation {
                 showingControls.toggle()
@@ -195,6 +227,22 @@ struct PresentationView: View {
 
         autoHideTask = Task {
             try? await Task.sleep(for: .seconds(3))
+            if !Task.isCancelled {
+                withAnimation {
+                    showingControls = false
+                }
+            }
+        }
+    }
+
+    private func showControlsBriefly() {
+        withAnimation {
+            showingControls = true
+        }
+
+        autoHideTask?.cancel()
+        autoHideTask = Task {
+            try? await Task.sleep(for: .seconds(2))
             if !Task.isCancelled {
                 withAnimation {
                     showingControls = false

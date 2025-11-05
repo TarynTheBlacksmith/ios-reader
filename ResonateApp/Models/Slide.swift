@@ -18,11 +18,11 @@ enum SlideRole: String, Codable, CaseIterable {
 
     var color: Color {
         switch self {
-        case .whatIs: return .red.opacity(0.3)
-        case .whatCouldBe: return .green.opacity(0.3)
-        case .contrast: return .orange.opacity(0.3)
-        case .callToAction: return .blue.opacity(0.3)
-        case .resolution: return .purple.opacity(0.3)
+        case .whatIs: return AppColors.whatIs
+        case .whatCouldBe: return AppColors.whatCouldBe
+        case .contrast: return AppColors.contrast
+        case .callToAction: return AppColors.callToAction
+        case .resolution: return AppColors.resolution
         }
     }
 

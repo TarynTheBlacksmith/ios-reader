@@ -9,52 +9,103 @@ import SwiftUI
 
 struct StoryCard: View {
     let story: Story
+    @State private var isHovered = false
+
+    var onEdit: () -> Void = {}
+    var onPresent: () -> Void = {}
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            // Thumbnail
-            thumbnailView
-                .frame(height: 200)
-                .background(Color.gray.opacity(0.2))
-                .clipShape(RoundedRectangle(cornerRadius: 12))
+        VStack(alignment: .leading, spacing: 0) {
+            // Thumbnail with action buttons overlay
+            ZStack(alignment: .bottom) {
+                thumbnailView
+                    .frame(height: 220)
+                    .background(AppColors.tertiaryBackground)
+                    .clipShape(RoundedRectangle(cornerRadius: CornerRadius.card, corners: [.topLeft, .topRight]))
+
+                // Action buttons overlay
+                actionButtons
+                    .padding(Spacing.medium)
+            }
 
             // Title and info
-            VStack(alignment: .leading, spacing: 6) {
+            VStack(alignment: .leading, spacing: Spacing.xSmall) {
                 Text(story.title)
-                    .font(.headline)
+                    .font(AppFonts.headline)
+                    .foregroundStyle(AppColors.textPrimary)
                     .lineLimit(2)
+                    .frame(minHeight: 44, alignment: .topLeading)
 
                 if !story.subtitle.isEmpty {
                     Text(story.subtitle)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(1)
+                        .font(AppFonts.subheadline)
+                        .foregroundStyle(AppColors.textSecondary)
+                        .lineLimit(2)
+                        .frame(minHeight: 36, alignment: .topLeading)
                 }
 
-                HStack {
+                Spacer(minLength: Spacing.xSmall)
+
+                // Metadata row
+                HStack(spacing: Spacing.medium) {
                     Label("\(story.slideCount)", systemImage: "square.stack.3d.up")
-                    Spacer()
-                    Label(story.formattedDuration, systemImage: "clock")
-                }
-                .font(.caption)
-                .foregroundStyle(.secondary)
+                        .font(AppFonts.footnote)
 
-                // Template badge
-                if let template = story.template {
-                    Text(template.displayName)
-                        .font(.caption2)
-                        .padding(.horizontal, 8)
-                        .padding(.vertical, 4)
-                        .background(Color.blue.opacity(0.2))
-                        .clipShape(Capsule())
+                    Label(story.formattedDuration, systemImage: "clock")
+                        .font(AppFonts.footnote)
+
+                    Spacer()
+
+                    // Template badge
+                    if let template = story.template {
+                        Text(template.displayName)
+                            .font(AppFonts.caption2)
+                            .fontWeight(.semibold)
+                            .padding(.horizontal, Spacing.xSmall)
+                            .padding(.vertical, Spacing.xxSmall)
+                            .background(AppColors.primary.opacity(0.15))
+                            .foregroundStyle(AppColors.primary)
+                            .clipShape(Capsule())
+                    }
                 }
+                .foregroundStyle(AppColors.textSecondary)
             }
-            .padding(.horizontal, 8)
-            .padding(.bottom, 8)
+            .padding(Spacing.medium)
         }
-        .background(Color(UIColor.systemBackground))
-        .clipShape(RoundedRectangle(cornerRadius: 16))
-        .shadow(color: .black.opacity(0.1), radius: 8, x: 0, y: 4)
+        .cardStyle(elevation: isHovered ? 2 : 1)
+        .scaleEffect(isHovered ? 1.02 : 1.0)
+        .animation(AppAnimations.quick, value: isHovered)
+    }
+
+    private var actionButtons: some View {
+        HStack(spacing: Spacing.small) {
+            Button {
+                onEdit()
+            } label: {
+                Label("Edit", systemImage: "pencil")
+                    .font(AppFonts.subheadline)
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, Spacing.medium)
+                    .padding(.vertical, Spacing.small)
+                    .background(.ultraThinMaterial)
+                    .clipShape(Capsule())
+            }
+
+            Button {
+                onPresent()
+            } label: {
+                Label("Present", systemImage: "play.fill")
+                    .font(AppFonts.subheadline)
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, Spacing.medium)
+                    .padding(.vertical, Spacing.small)
+                    .background(AppColors.primary)
+                    .clipShape(Capsule())
+            }
+        }
+        .shadow(color: .black.opacity(0.2), radius: 8, x: 0, y: 4)
     }
 
     @ViewBuilder

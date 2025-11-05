@@ -27,8 +27,8 @@ struct StoryEditorView: View {
             HStack(spacing: 0) {
                 // Slide list sidebar
                 slideListSidebar
-                    .frame(width: 280)
-                    .background(Color(UIColor.systemGroupedBackground))
+                    .frame(minWidth: Layout.sidebarMinWidth, idealWidth: Layout.sidebarWidth, maxWidth: Layout.sidebarMaxWidth)
+                    .background(AppColors.groupedBackground)
 
                 Divider()
 
@@ -50,6 +50,7 @@ struct StoryEditorView: View {
                     } label: {
                         Label("Present", systemImage: "play.fill")
                     }
+                    .primaryButtonStyle()
                 }
             }
             .sheet(isPresented: $showingSlideEditor) {
@@ -71,25 +72,25 @@ struct StoryEditorView: View {
     private var slideListSidebar: some View {
         VStack(spacing: 0) {
             // Story info
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: Spacing.small) {
                 TextField("Story Title", text: $story.title)
-                    .font(.headline)
+                    .font(AppFonts.headline)
                     .textFieldStyle(.roundedBorder)
 
                 TextField("Subtitle", text: $story.subtitle)
-                    .font(.subheadline)
+                    .font(AppFonts.subheadline)
                     .textFieldStyle(.roundedBorder)
 
-                HStack {
+                HStack(spacing: Spacing.medium) {
                     Label("\(story.slideCount)", systemImage: "square.stack.3d.up")
                     Spacer()
                     Label(story.formattedDuration, systemImage: "clock")
                 }
-                .font(.caption)
-                .foregroundStyle(.secondary)
+                .font(AppFonts.caption)
+                .foregroundStyle(AppColors.textSecondary)
             }
-            .padding()
-            .background(Color(UIColor.systemBackground))
+            .padding(Spacing.medium)
+            .background(AppColors.background)
 
             Divider()
 
@@ -99,11 +100,18 @@ struct StoryEditorView: View {
                     ForEach(Array(story.slides.enumerated()), id: \.element.id) { index, slide in
                         slideListRow(slide: slide, index: index)
                             .id(index)
+                            .listRowInsets(EdgeInsets(top: Spacing.xxSmall, leading: Spacing.small, bottom: Spacing.xxSmall, trailing: Spacing.small))
                             .listRowBackground(
-                                selectedSlideIndex == index ? Color.accentColor.opacity(0.2) : Color.clear
+                                selectedSlideIndex == index ?
+                                    RoundedRectangle(cornerRadius: CornerRadius.small)
+                                        .fill(AppColors.primary.opacity(0.15))
+                                        .padding(.horizontal, Spacing.xxSmall)
+                                    : nil
                             )
                             .onTapGesture {
-                                selectedSlideIndex = index
+                                withAnimation(AppAnimations.quick) {
+                                    selectedSlideIndex = index
+                                }
                             }
                     }
                     .onMove { from, to in
@@ -129,56 +137,65 @@ struct StoryEditorView: View {
                 addSlide()
             } label: {
                 Label("Add Slide", systemImage: "plus.square")
+                    .font(AppFonts.bodyEmphasis)
                     .frame(maxWidth: .infinity)
             }
-            .buttonStyle(.bordered)
-            .padding()
+            .primaryButtonStyle()
+            .padding(Spacing.medium)
         }
     }
 
     private func slideListRow(slide: Slide, index: Int) -> some View {
-        HStack(spacing: 12) {
+        HStack(spacing: Spacing.small) {
             // Slide number
             Text("\(index + 1)")
-                .font(.caption)
-                .foregroundStyle(.secondary)
-                .frame(width: 24)
+                .font(AppFonts.footnote)
+                .fontWeight(.semibold)
+                .foregroundStyle(AppColors.textSecondary)
+                .frame(width: 28)
 
-            // Thumbnail
-            RoundedRectangle(cornerRadius: 4)
-                .fill(slide.role.color)
-                .frame(width: 60, height: 40)
-                .overlay {
-                    Text(slide.role.description)
-                        .font(.system(size: 8))
-                        .lineLimit(2)
-                        .multilineTextAlignment(.center)
-                        .padding(2)
-                }
+            // Thumbnail - larger and more visible
+            ZStack {
+                RoundedRectangle(cornerRadius: CornerRadius.small)
+                    .fill(slide.role.color.opacity(0.3))
+                    .frame(width: 80, height: 60)
+
+                RoundedRectangle(cornerRadius: CornerRadius.small)
+                    .strokeBorder(slide.role.color, lineWidth: 2)
+                    .frame(width: 80, height: 60)
+
+                Text(slide.role.description)
+                    .font(.system(size: 9, weight: .semibold))
+                    .lineLimit(2)
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(AppColors.textPrimary)
+                    .padding(Spacing.xxSmall)
+            }
 
             // Info
-            VStack(alignment: .leading, spacing: 2) {
+            VStack(alignment: .leading, spacing: Spacing.xxSmall) {
                 Text(slide.title)
-                    .font(.subheadline)
-                    .lineLimit(1)
+                    .font(AppFonts.subheadline)
+                    .fontWeight(.medium)
+                    .foregroundStyle(AppColors.textPrimary)
+                    .lineLimit(2)
 
-                HStack {
-                    Text(slide.role.description)
-                        .font(.caption2)
-                        .padding(.horizontal, 6)
-                        .padding(.vertical, 2)
-                        .background(slide.role.color)
-                        .clipShape(Capsule())
-
+                HStack(spacing: Spacing.xxSmall) {
                     if slide.hasAutoAdvance {
                         Image(systemName: "clock.fill")
-                            .font(.caption2)
-                            .foregroundStyle(.secondary)
+                            .font(.system(size: 9))
+                            .foregroundStyle(AppColors.textSecondary)
                     }
+
+                    Text("\(slide.mediaElements.count) elements")
+                        .font(.system(size: 10))
+                        .foregroundStyle(AppColors.textSecondary)
                 }
             }
+
+            Spacer(minLength: 0)
         }
-        .padding(.vertical, 4)
+        .padding(.vertical, Spacing.xxSmall)
     }
 
     // MARK: - Slide Preview Area
