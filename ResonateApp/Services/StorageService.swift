@@ -100,12 +100,20 @@ class StorageService: ObservableObject {
     }
 
     func importStory(from data: Data) throws -> Story {
-        var story = try decoder.decode(Story.self, from: data)
+        let decodedStory = try decoder.decode(Story.self, from: data)
 
-        // Generate new ID to avoid conflicts
-        story.id = UUID()
-        story.createdDate = Date()
-        story.modifiedDate = Date()
+        // Generate new ID to avoid conflicts by creating a new instance
+        let story = Story(
+            id: UUID(),
+            title: decodedStory.title,
+            subtitle: decodedStory.subtitle,
+            author: decodedStory.author,
+            createdDate: Date(),
+            modifiedDate: Date(),
+            slides: decodedStory.slides,
+            template: decodedStory.template,
+            thumbnailPath: decodedStory.thumbnailPath
+        )
 
         return story
     }

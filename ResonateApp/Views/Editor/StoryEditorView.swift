@@ -95,11 +95,16 @@ struct StoryEditorView: View {
 
             // Slide thumbnails
             ScrollViewReader { proxy in
-                List(selection: $selectedSlideIndex) {
+                List {
                     ForEach(Array(story.slides.enumerated()), id: \.element.id) { index, slide in
                         slideListRow(slide: slide, index: index)
-                            .tag(index)
                             .id(index)
+                            .listRowBackground(
+                                selectedSlideIndex == index ? Color.accentColor.opacity(0.2) : Color.clear
+                            )
+                            .onTapGesture {
+                                selectedSlideIndex = index
+                            }
                     }
                     .onMove { from, to in
                         story.slides.move(fromOffsets: from, toOffset: to)

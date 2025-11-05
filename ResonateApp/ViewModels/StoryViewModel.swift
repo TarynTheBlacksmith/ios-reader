@@ -66,11 +66,17 @@ class StoryViewModel: ObservableObject {
     }
 
     func duplicateStory(_ story: Story) {
-        var newStory = story
-        newStory.id = UUID()
-        newStory.title = "\(story.title) (Copy)"
-        newStory.createdDate = Date()
-        newStory.modifiedDate = Date()
+        let newStory = Story(
+            id: UUID(),
+            title: "\(story.title) (Copy)",
+            subtitle: story.subtitle,
+            author: story.author,
+            createdDate: Date(),
+            modifiedDate: Date(),
+            slides: story.slides,
+            template: story.template,
+            thumbnailPath: story.thumbnailPath
+        )
         stories.insert(newStory, at: 0)
         saveStory(newStory)
     }

@@ -1,0 +1,456 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14D05B666A304A68847ED97E /* StoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C77873EBCEADBE9ABDE661B /* StoryListView.swift */; };
+		1953250701732B59606225FF /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0E4D812237D1DB9F41559 /* Story.swift */; };
+		3BEC4E7ABEE7A0C01A293AD9 /* StoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF62CB3B775D3085EF6E574 /* StoryViewModel.swift */; };
+		433B84D0E061382BEC92D2D3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC029A646CCC19CBDFB0D0 /* ContentView.swift */; };
+		608A8B6B36AB63CD5311707B /* MediaElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6F48AF9475BAE5774718B6 /* MediaElement.swift */; };
+		7CF1F874627A236013C95138 /* MediaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09694829B002EC1728D530C /* MediaService.swift */; };
+		83AC3F5C0AD3231F8996BD1B /* SlideRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001AE8E33D03A7E359AC1EDC /* SlideRenderer.swift */; };
+		8452AE6587E3E924E4A18472 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D24B2BF54E7D611AC3DC7 /* StorageService.swift */; };
+		96282B1EFDD73BE87FFFAD6C /* PresentationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DAF89D443ADE939E08211 /* PresentationViewModel.swift */; };
+		990CD640AC2488AE04C6F800 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13E19040595ACBFE13E995FE /* Assets.xcassets */; };
+		9C9B5D70D9C183453BEBE439 /* PresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC121FB03C5A8A9941716DE4 /* PresentationView.swift */; };
+		A2A6EF6C81659AED0AC1222D /* StoryEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280CAA81DB8FCAFD3CFD22EC /* StoryEditorView.swift */; };
+		B5D88F329E0F8E1FEF16A4E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF0AEF105FB7D8504DA3760F /* Foundation.framework */; };
+		C8CBBDFA24792E0B37E6ECB7 /* CreateStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE218554B9858E55CF480E15 /* CreateStoryView.swift */; };
+		CB30FA9BC702707412F065A7 /* SlideEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6679175FB2C2A4134E09F9 /* SlideEditorView.swift */; };
+		CEC4D1509F3313DC9A308B49 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DCC6132217C1B5048E9527 /* Slide.swift */; };
+		E3B1F0E1798956A0E793BBAD /* StoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0286AAD5442CECBD4A9168 /* StoryCard.swift */; };
+		F16F10F4B66EE05A796F73FE /* ResonateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347DA8450F9F5AEE0DEA8DAE /* ResonateApp.swift */; };
+		FBB9C96519AEDE46C707B9FF /* MediaPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E88E2A73D10BB7297025155 /* MediaPickerView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		001AE8E33D03A7E359AC1EDC /* SlideRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SlideRenderer.swift; path = ResonateApp/Views/Presentation/SlideRenderer.swift; sourceTree = "<group>"; };
+		04F0E4D812237D1DB9F41559 /* Story.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Story.swift; path = ResonateApp/Models/Story.swift; sourceTree = "<group>"; };
+		13E19040595ACBFE13E995FE /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ResonateApp/Resources/Assets.xcassets; sourceTree = "<group>"; };
+		280CAA81DB8FCAFD3CFD22EC /* StoryEditorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoryEditorView.swift; path = ResonateApp/Views/Editor/StoryEditorView.swift; sourceTree = "<group>"; };
+		347DA8450F9F5AEE0DEA8DAE /* ResonateApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResonateApp.swift; path = ResonateApp/App/ResonateApp.swift; sourceTree = "<group>"; };
+		3E88E2A73D10BB7297025155 /* MediaPickerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MediaPickerView.swift; path = ResonateApp/Views/Editor/MediaPickerView.swift; sourceTree = "<group>"; };
+		3F0286AAD5442CECBD4A9168 /* StoryCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoryCard.swift; path = ResonateApp/Views/StoryList/StoryCard.swift; sourceTree = "<group>"; };
+		4D69C9DC71C342FABF441A79 /* ResonateApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResonateApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		51DCC6132217C1B5048E9527 /* Slide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Slide.swift; path = ResonateApp/Models/Slide.swift; sourceTree = "<group>"; };
+		5C77873EBCEADBE9ABDE661B /* StoryListView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoryListView.swift; path = ResonateApp/Views/StoryList/StoryListView.swift; sourceTree = "<group>"; };
+		62AC029A646CCC19CBDFB0D0 /* ContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = ResonateApp/App/ContentView.swift; sourceTree = "<group>"; };
+		7F6679175FB2C2A4134E09F9 /* SlideEditorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SlideEditorView.swift; path = ResonateApp/Views/Editor/SlideEditorView.swift; sourceTree = "<group>"; };
+		846DAF89D443ADE939E08211 /* PresentationViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PresentationViewModel.swift; path = ResonateApp/ViewModels/PresentationViewModel.swift; sourceTree = "<group>"; };
+		9C9D24B2BF54E7D611AC3DC7 /* StorageService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StorageService.swift; path = ResonateApp/Services/StorageService.swift; sourceTree = "<group>"; };
+		AF0AEF105FB7D8504DA3760F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		BE218554B9858E55CF480E15 /* CreateStoryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CreateStoryView.swift; path = ResonateApp/Views/StoryList/CreateStoryView.swift; sourceTree = "<group>"; };
+		C09694829B002EC1728D530C /* MediaService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MediaService.swift; path = ResonateApp/Services/MediaService.swift; sourceTree = "<group>"; };
+		CC121FB03C5A8A9941716DE4 /* PresentationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PresentationView.swift; path = ResonateApp/Views/Presentation/PresentationView.swift; sourceTree = "<group>"; };
+		DD6F48AF9475BAE5774718B6 /* MediaElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MediaElement.swift; path = ResonateApp/Models/MediaElement.swift; sourceTree = "<group>"; };
+		DDF62CB3B775D3085EF6E574 /* StoryViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoryViewModel.swift; path = ResonateApp/ViewModels/StoryViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		307F5A9E78A142C875CA5271 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5D88F329E0F8E1FEF16A4E4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		35642E1C85315BCA7DBDBE05 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DD6F48AF9475BAE5774718B6 /* MediaElement.swift */,
+				51DCC6132217C1B5048E9527 /* Slide.swift */,
+				04F0E4D812237D1DB9F41559 /* Story.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		4C2A436BD97D7E09809CEDA2 /* StoryList */ = {
+			isa = PBXGroup;
+			children = (
+				BE218554B9858E55CF480E15 /* CreateStoryView.swift */,
+				3F0286AAD5442CECBD4A9168 /* StoryCard.swift */,
+				5C77873EBCEADBE9ABDE661B /* StoryListView.swift */,
+			);
+			name = StoryList;
+			sourceTree = "<group>";
+		};
+		5215E3C9B3E3ADFE84955C6E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6892083A9A3D498A756EEE5 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		698FC9C33FB65FD6E2376019 /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				3E88E2A73D10BB7297025155 /* MediaPickerView.swift */,
+				7F6679175FB2C2A4134E09F9 /* SlideEditorView.swift */,
+				280CAA81DB8FCAFD3CFD22EC /* StoryEditorView.swift */,
+			);
+			name = Editor;
+			sourceTree = "<group>";
+		};
+		7E7308CEDB87B204080753C7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C09694829B002EC1728D530C /* MediaService.swift */,
+				9C9D24B2BF54E7D611AC3DC7 /* StorageService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		AED314019658E0D5D07DBFEA /* ResonateApp */ = {
+			isa = PBXGroup;
+			children = (
+				35642E1C85315BCA7DBDBE05 /* Models */,
+				D6E9199CA7A03A1398AFE9AE /* Views */,
+				D4F9B22F178B4C4BB2CBA0EF /* ViewModels */,
+				7E7308CEDB87B204080753C7 /* Services */,
+				EC45D9907CBF66D147F13C5D /* Resources */,
+				62AC029A646CCC19CBDFB0D0 /* ContentView.swift */,
+				347DA8450F9F5AEE0DEA8DAE /* ResonateApp.swift */,
+			);
+			name = ResonateApp;
+			sourceTree = "<group>";
+		};
+		C6892083A9A3D498A756EEE5 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				AF0AEF105FB7D8504DA3760F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		C723E03A9CE1F8A51AF6244D /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CC121FB03C5A8A9941716DE4 /* PresentationView.swift */,
+				001AE8E33D03A7E359AC1EDC /* SlideRenderer.swift */,
+			);
+			name = Presentation;
+			sourceTree = "<group>";
+		};
+		D4F9B22F178B4C4BB2CBA0EF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				846DAF89D443ADE939E08211 /* PresentationViewModel.swift */,
+				DDF62CB3B775D3085EF6E574 /* StoryViewModel.swift */,
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		D6E9199CA7A03A1398AFE9AE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4C2A436BD97D7E09809CEDA2 /* StoryList */,
+				698FC9C33FB65FD6E2376019 /* Editor */,
+				C723E03A9CE1F8A51AF6244D /* Presentation */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		DFF3FD51B2EA60252AE300E5 = {
+			isa = PBXGroup;
+			children = (
+				E9D595EAF65E82492FA6D6A4 /* Products */,
+				5215E3C9B3E3ADFE84955C6E /* Frameworks */,
+				AED314019658E0D5D07DBFEA /* ResonateApp */,
+			);
+			sourceTree = "<group>";
+		};
+		E9D595EAF65E82492FA6D6A4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4D69C9DC71C342FABF441A79 /* ResonateApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC45D9907CBF66D147F13C5D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				13E19040595ACBFE13E995FE /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CD775D2B406A9479005FC259 /* ResonateApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3866C199B4DDA20FF5F44343 /* Build configuration list for PBXNativeTarget "ResonateApp" */;
+			buildPhases = (
+				9DF6C34F9D1D133F017672E0 /* Sources */,
+				307F5A9E78A142C875CA5271 /* Frameworks */,
+				23F2FE0D0332924F2A15E75B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ResonateApp;
+			productName = ResonateApp;
+			productReference = 4D69C9DC71C342FABF441A79 /* ResonateApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A6CB097A749AB97DDB5E8BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = 85F3BD01AE9CCA324A54630D /* Build configuration list for PBXProject "ResonateApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DFF3FD51B2EA60252AE300E5;
+			minimizedProjectReferenceProxies = 0;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E9D595EAF65E82492FA6D6A4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CD775D2B406A9479005FC259 /* ResonateApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		23F2FE0D0332924F2A15E75B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				990CD640AC2488AE04C6F800 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9DF6C34F9D1D133F017672E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				433B84D0E061382BEC92D2D3 /* ContentView.swift in Sources */,
+				F16F10F4B66EE05A796F73FE /* ResonateApp.swift in Sources */,
+				608A8B6B36AB63CD5311707B /* MediaElement.swift in Sources */,
+				CEC4D1509F3313DC9A308B49 /* Slide.swift in Sources */,
+				1953250701732B59606225FF /* Story.swift in Sources */,
+				96282B1EFDD73BE87FFFAD6C /* PresentationViewModel.swift in Sources */,
+				3BEC4E7ABEE7A0C01A293AD9 /* StoryViewModel.swift in Sources */,
+				7CF1F874627A236013C95138 /* MediaService.swift in Sources */,
+				8452AE6587E3E924E4A18472 /* StorageService.swift in Sources */,
+				C8CBBDFA24792E0B37E6ECB7 /* CreateStoryView.swift in Sources */,
+				E3B1F0E1798956A0E793BBAD /* StoryCard.swift in Sources */,
+				14D05B666A304A68847ED97E /* StoryListView.swift in Sources */,
+				FBB9C96519AEDE46C707B9FF /* MediaPickerView.swift in Sources */,
+				CB30FA9BC702707412F065A7 /* SlideEditorView.swift in Sources */,
+				A2A6EF6C81659AED0AC1222D /* StoryEditorView.swift in Sources */,
+				9C9B5D70D9C183453BEBE439 /* PresentationView.swift in Sources */,
+				83AC3F5C0AD3231F8996BD1B /* SlideRenderer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1E25670D1E0844152B3157D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = ResonateApp/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.resonate.app;
+				PRODUCT_NAME = ResonateApp;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5C716225B2E46A85E744AF3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		892D5DBA87901726A5325A0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = ResonateApp/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.resonate.app;
+				PRODUCT_NAME = ResonateApp;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F03FE9FDEAF3E1532DFC6C16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3866C199B4DDA20FF5F44343 /* Build configuration list for PBXNativeTarget "ResonateApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				892D5DBA87901726A5325A0E /* Release */,
+				1E25670D1E0844152B3157D2 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85F3BD01AE9CCA324A54630D /* Build configuration list for PBXProject "ResonateApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F03FE9FDEAF3E1532DFC6C16 /* Debug */,
+				5C716225B2E46A85E744AF3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8A6CB097A749AB97DDB5E8BA /* Project object */;
+}

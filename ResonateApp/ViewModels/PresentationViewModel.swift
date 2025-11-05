@@ -190,6 +190,8 @@ class PresentationViewModel: ObservableObject {
     }
 
     deinit {
-        stopSlideTimer()
+        // Timer cleanup happens automatically when the object is deallocated
+        // Cannot call main actor isolated methods from deinit
+        timer?.invalidate()
     }
 }

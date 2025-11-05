@@ -67,7 +67,7 @@ struct SlideRenderer: View {
 
             DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
                 withAnimation(element.fadeIn ? .easeIn(duration: 0.5) : .none) {
-                    visibleElements.insert(element.id)
+                    _ = visibleElements.insert(element.id)
                 }
             }
         }
